@@ -1,0 +1,56 @@
+//Buscar charmander
+db.pokeData.find({
+    name:"Charmander"    
+     }).pretty()
+//Buscar Dratini
+db.pokeData.find({
+    name:"Dratini"    
+     }).pretty()
+//Buscar Magikarp  
+db.pokeData.find({
+    name:"Magikarp"    
+     }).pretty()
+//Buscar Snorlax
+     db.pokeData.find({
+    name:"Snorlax"    
+     }).pretty()
+     
+//Buscar IDS
+//Buscar ID 025
+ db.pokeData.find({
+    id:"025"    
+     }).pretty()    
+//Buscar ID 035 
+      db.pokeData.find({
+    id:"035"    
+     }).pretty()  
+//Buscar ID 123
+      db.pokeData.find({
+    id:"123"    
+     }).pretty()  
+
+//Buscar ID 151
+    db.pokeData.find({
+    id:"151"    
+     }).pretty()  
+
+
+//buscar todos
+
+db.pokeData.find(
+    { 
+        $or: [
+            { id: {$eq: "025"} },
+            { id: {$eq: "035"} },
+            { id: {$eq: "123"} },
+            { id: {$eq: "151"} },
+            { name:{$eq: "Charmander"} },
+            { name:{$eq: "Dratini"}},
+            { name:{$eq: "Magikarp"}},
+             { name:{$eq: "Snorlax"}},
+         ]
+    }, {name: 1, _id: 0}
+).pretty()
+
+
+
